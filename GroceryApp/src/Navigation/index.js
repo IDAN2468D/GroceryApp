@@ -3,7 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Favorite, GetStarted, Home, Notification, Profile } from '../Screens/index';
-import { BottomNavigator, CustomDrawer, Search } from '../Components';
+import { BottomNavigator, CustomDrawer, DetailsScreen, Search } from '../Components';
 import MenuScreen from '../Screens/MenuScreen';
 import SettingsScreen from '../Screens/SettingsScreen';
 import { colors } from '../StyleGuide';
@@ -108,6 +108,7 @@ const Router = () => {
             <Stack.Screen name="GetStarted" component={GetStarted} options={{ headerShown: false }} />
             <Stack.Screen name="MainApp" component={MainApp} options={{ headerShown: false }} />
             <Stack.Screen name="Search" component={Search} options={{ headerShown: false }} />
+            <Stack.Screen name="DetailsScreen" component={DetailsScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
     );
 };

@@ -5,5 +5,6 @@ import CustomDrawer from '../Components/CustomDrawer';
 import Search from './Search';
 import Categores from './Categories';
 import Foods from './Foods';
+import DetailsScreen from './DetailsScreen';
 
-export { Buttons, BottomNavigator, Header, CustomDrawer, Search, Categores, Foods }
+export { Buttons, BottomNavigator, Header, CustomDrawer, Search, Categores, Foods, DetailsScreen }

@@ -1,22 +1,63 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableNativeFeedback } from 'react-native';
+import { colors, fonts } from '../../StyleGuide';
 
-const Foods = ({ item }) => {
+const Foods = ({ item, onPress }) => {
+
     return (
-        <View>
-            <Text>{item.name}</Text>
-            <Text>{item.price}</Text>
-            <Text>{item.cal}</Text>
-            <Image source={{ uri: item.img }} resizeMode="contain" style={styles.image} />
-        </View>
+        <TouchableNativeFeedback style={styles.container} onPress={onPress}>
+            <View style={styles.BgImage}>
+                <Image source={{ uri: item.img }} resizeMode="cover" style={styles.image} />
+                <View style={styles.ContainerText}>
+                    <Text style={styles.Text}>{item.name}</Text>
+                    <Text style={styles.Text}>{item.cal}</Text>
+                </View>
+                <View style={styles.ContainerPrice}>
+                    <Text style={styles.TextPrice}>{item.price}$</Text>
+                </View>
+            </View>
+        </TouchableNativeFeedback>
     )
 }
 
 export default Foods
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    BgImage: {
+        marginHorizontal: 20,
+        borderWidth: 1,
+        borderColor: colors.lightGrey_2,
+        marginVertical: 10,
+        borderRadius: 10,
+    },
     image: {
-        width: 200,
-        height: 200,
+        width: 155,
+        height: 100,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+    },
+    ContainerText: {
+        paddingVertical: 10,
+        paddingHorizontal: 20
+    },
+    Text: {
+        fontSize: 14,
+        fontFamily: fonts.Medium
+    },
+    ContainerPrice: {
+        backgroundColor: colors.lightGrey,
+        marginHorizontal: 10,
+        marginVertical: 10,
+        paddingHorizontal: 50,
+        paddingVertical: 10,
+        borderRadius: 30,
+
+    },
+    TextPrice: {
+        fontSize: 16,
+        fontFamily: fonts.Medium
     }
 })

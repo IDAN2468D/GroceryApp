@@ -17,7 +17,7 @@ const Home = ({ navigation }) => {
     }, [])
 
     const fetchPost = () => {
-        const apiUrl = "http://192.168.1.105:3000/foods"
+        const apiUrl = "https://app-progect-1.herokuapp.com/foods"
         fetch(apiUrl)
             .then((response) => response.json())
             .then((responseJson) => {
@@ -66,14 +66,16 @@ const Home = ({ navigation }) => {
                         <Text style={styles.titleCategories}>Foods</Text>
                         <FlatList
                             data={foods}
-                            horizontal
+                            numColumns={2}
                             keyExtractor={item => item._id}
                             showsHorizontalScrollIndicator={false}
                             keyboardDismissMode="on-drag"
                             renderItem={({ item, index }) => {
                                 return (
                                     <View item={index}>
-                                        <Foods item={item} />
+                                        <Foods
+                                            item={item}
+                                            onPress={() => navigation.navigate("DetailsScreen", { itemId: item })} />
                                     </View>
                                 )
                             }}
