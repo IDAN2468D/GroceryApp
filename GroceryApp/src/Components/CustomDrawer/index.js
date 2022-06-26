@@ -4,6 +4,8 @@ import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawe
 import { colors, fonts, sizes } from '../../StyleGuide';
 import { AvatarMan } from '../../StyleGuide/images';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import RNExitApp from 'react-native-exit-app';
+
 
 const CustomDrawer = (props) => {
     return (
@@ -26,13 +28,13 @@ const CustomDrawer = (props) => {
                 </View>
             </DrawerContentScrollView>
             <View style={styles.CustomDrawer}>
-                <TouchableOpacity style={{ paddingVertical: 15 }}>
+                <TouchableOpacity style={{ paddingVertical: 15 }} >
                     <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                         <Ionicons name='share-social-outline' size={22} />
                         <Text style={styles.Medium}>Tell a Friend</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ paddingVertical: 15 }}>
+                <TouchableOpacity style={{ paddingVertical: 15 }} onPress={() => RNExitApp.exitApp()}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                         <Ionicons name='exit-outline' size={22} />
                         <Text style={styles.Medium}>Sign Out</Text>
