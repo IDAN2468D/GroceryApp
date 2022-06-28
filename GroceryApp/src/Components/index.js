@@ -6,5 +6,6 @@ import Search from './Search';
 import Categores from './Categories';
 import Foods from './Foods';
 import DetailsScreen from './DetailsScreen';
+import Category from './Category';
 
-export { Buttons, BottomNavigator, Header, CustomDrawer, Search, Categores, Foods, DetailsScreen }
+export { Buttons, BottomNavigator, Header, CustomDrawer, Search, Categores, Foods, DetailsScreen, Category }

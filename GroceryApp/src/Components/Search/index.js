@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { colors } from '../../StyleGuide';
+import { FlatList, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { colors, fonts } from '../../StyleGuide';
+import { Category } from '../index';
 
 const Search = () => {
     const [filterData, setFilterData] = useState([]);
     const [masterData, setMasterData] = useState([]);
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         fetchPost()
@@ -14,7 +17,7 @@ const Search = () => {
     }, [])
 
     const fetchPost = () => {
-        const apiUrl = "https://jsonplaceholder.typicode.com/posts"
+        const apiUrl = "https://app-progect-1.herokuapp.com/foods"
         fetch(apiUrl)
             .then((response) => response.json())
             .then((responseJson) => {
@@ -25,27 +28,47 @@ const Search = () => {
             })
     }
 
-    function ItemView({ item }) {
+    const serchFilter = (text) => {
+        if (text) {
+            const newData = masterData.filter((item) => {
+                const itemData = item.name ? item.name.toUpperCase() : "".toUpperCase();
+                const textData = text.toUpperCase();
+                return itemData.indexOf(textData) > -1;
+            });
+            setFilterData(newData);
+            setSearch(text);
+        } else {
+            setFilterData(masterData);
+            setSearch(text);
+        }
+    }
+
+    const ItemView = ({ item }) => {
         return (
-            <Text style={styles.itemStyle}>
-                {item.id}{". "}{item.title.toUpperCase()}
-            </Text>
+            <Category
+                item={item}
+                onPress={() => navigation.navigate("DetailsScreen", { itemId: item })}
+            />
         )
     }
 
-    function ItemSeparatorView() {
-        return (
-            <View style={{ height: 0.5, width: "100%", backgroundColor: colors.Grey_2, }} />
-        )
-    }
 
     return (
         <View style={{ flex: 1, }}>
             <View style={styles.container}>
+                <View style={styles.wrapperSearch}>
+                    <Icon color={colors.Search} name="search" size={20} style={{ paddingVertical: 10, paddingHorizontal: 5, }} />
+                    <TextInput
+                        style={{ ...fonts.body2 }}
+                        placeholder="Happy Bones"
+                        placeholderTextColor={{ ...colors.StrongViolet }}
+                        underlineColorAndroid="transparent"
+                        onChangeText={(text) => serchFilter(text)}
+                    />
+                </View>
                 <FlatList
                     data={filterData}
                     keyExtractor={(item, index) => index.toString()}
-                    ItemSeparatorComponent={ItemSeparatorView}
                     renderItem={ItemView}
                 />
             </View>
@@ -61,5 +84,18 @@ const styles = StyleSheet.create({
     },
     itemStyle: {
         padding: 10,
-    }
+    },
+    wrapperSearch: {
+        height: 60,
+        marginHorizontal: 20,
+        marginVertical: 20,
+        backgroundColor: colors.lightGrey_2,
+        borderRadius: 12,
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        alignItems: "flex-end",
+        paddingHorizontal: 25,
+        paddingVertical: 10,
+    },
+
 })

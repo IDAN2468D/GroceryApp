@@ -8,7 +8,7 @@ const mainColors = {
     lightGrey: '#f1f2f6',
     darkGreen: '#275A02',
     StrongViolet: "#8200d6",
-    grey_2: "#ccc"
+    grey_2: "#ccc",
 }
 
 export const colors = {
@@ -21,5 +21,5 @@ export const colors = {
     lightGrey_2: mainColors.lightGrey_2,
     darkGreen: mainColors.darkGreen,
     StrongViolet: mainColors.StrongViolet,
-    grey_2: mainColors.grey_2
+    grey_2: mainColors.grey_2,
 };
