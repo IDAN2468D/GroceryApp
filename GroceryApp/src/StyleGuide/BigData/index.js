@@ -55,3 +55,26 @@ export const dataTopProducts = [
         bgColor: 'rgba(140, 250, 145,0.5)',
     },
 ];
+
+export const slider = [
+    {
+        id: 1,
+        title: "Discover Best Places",
+        discription: "Done with React Native Onboarding Swiper",
+        image: require("../../StyleGuide/images/onboard/onboardScreen1.png")
+    },
+    {
+        id: 2,
+        title: "Shoose A Tasty Dish",
+        discription: "This is the subtitle that sumplements the title.",
+        image: require("../../StyleGuide/images/onboard/onboardScreen2.png")
+
+    },
+    {
+        id: 3,
+        title: "Pick Up Delivery",
+        discription: "Beautiful, isn't it?",
+        image: require("../../StyleGuide/images/onboard/onboardScreen3.png")
+
+    }
+]

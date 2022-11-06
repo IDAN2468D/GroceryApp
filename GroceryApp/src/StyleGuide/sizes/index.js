@@ -11,7 +11,7 @@ const mainSizes = {
 export const sizes = {
     // TextSizes
     titleSize: mainSizes.titleSize,
-    textSizes: 18,
+    textSizes: mainSizes.textSizes,
 
     windowWidth,
     windowHeight

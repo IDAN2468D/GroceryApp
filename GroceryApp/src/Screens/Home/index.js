@@ -20,11 +20,8 @@ const Home = ({ navigation }) => {
         const apiUrl = "https://app-progect-1.herokuapp.com/foods"
         fetch(apiUrl)
             .then((response) => response.json())
-            .then((response) => {
-                setFoods(response);
-            }).catch((error) => {
-                console.error(error);
-            })
+            .then((response) => { setFoods(response); })
+            .catch((error) => { console.error(error); })
     }
 
     return (

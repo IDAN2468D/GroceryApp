@@ -7,5 +7,7 @@ import Categores from './Categories';
 import Foods from './Foods';
 import DetailsScreen from './DetailsScreen';
 import Category from './Category';
+import HeaderRight from './headerRight';
+import FromInput from './FromInput';
 
-export { Buttons, BottomNavigator, Header, CustomDrawer, Search, Categores, Foods, DetailsScreen, Category }
+export { Buttons, BottomNavigator, Header, CustomDrawer, Search, Categores, Foods, DetailsScreen, Category, HeaderRight, FromInput }

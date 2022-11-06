@@ -15,7 +15,18 @@ const GetStarted = ({ navigation }) => {
             <View style={styles.wrapperSlogan}>
                 <Text style={styles.txtSlogan}>Shop Your Daily</Text>
                 <Text style={styles.txtSlogan}>Necessary</Text>
-                <Buttons text="GetStarted" onPress={() => navigation.replace("MainApp")} />
+                <Buttons
+                    buttonText="GetStarted"
+                    containerStyle={{
+                        paddingVertical: 20,
+                        marginHorizontal: 30,
+                        alignItems: "center",
+                        marginTop: 60,
+                        borderRadius: 40,
+                        backgroundColor: colors.darkGreen,
+                    }}
+                    onPress={() => navigation.replace("Sign_In")}
+                />
             </View>
         </View>
     )

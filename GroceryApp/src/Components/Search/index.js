@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FlatList, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors, fonts } from '../../StyleGuide';
-import { Category } from '../index';
+import Foods from '../Foods';
 
 const Search = () => {
     const [filterData, setFilterData] = useState([]);
@@ -45,7 +45,7 @@ const Search = () => {
 
     const ItemView = ({ item }) => {
         return (
-            <Category
+            <Foods
                 item={item}
                 onPress={() => navigation.navigate("DetailsScreen", { itemId: item })}
             />
@@ -69,6 +69,7 @@ const Search = () => {
                 <FlatList
                     data={filterData}
                     keyExtractor={(item, index) => index.toString()}
+                    numColumns={2}
                     renderItem={ItemView}
                 />
             </View>

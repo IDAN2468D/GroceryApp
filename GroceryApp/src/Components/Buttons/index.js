@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { colors, fonts, sizes } from '../../StyleGuide'
+import { colors, fonts, sizes } from '../../StyleGuide';
 
-const Buttons = ({ onPress, text }) => {
+const Buttons = ({ onPress, buttonText, containerStyle, disabled }) => {
     return (
-        <TouchableOpacity style={styles.container} onPress={onPress}>
-            <Text style={styles.text}>{text}</Text>
+        <TouchableOpacity disabled={disabled} style={{ ...containerStyle }} onPress={onPress}>
+            <Text style={styles.text}>{buttonText}</Text>
         </TouchableOpacity>
     )
 }
@@ -13,15 +13,6 @@ const Buttons = ({ onPress, text }) => {
 export default Buttons
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: colors.primary,
-        height: 60,
-        width: 260,
-        borderRadius: 20,
-        marginTop: 90,
-        justifyContent: 'center',
-        alignSelf: 'center',
-    },
     text: {
         fontSize: sizes.textSizes,
         fontFamily: fonts.Medium,

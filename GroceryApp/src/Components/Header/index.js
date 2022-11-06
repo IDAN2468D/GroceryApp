@@ -10,7 +10,7 @@ const Header = ({ drawer, back, cart, onPress }) => {
     if (drawer) {
         return (
             <View style={styles.wrapperHeader}>
-                <TouchableOpacity onPress={onPress}>
+                <TouchableOpacity onPress={() => navigation.navigate("BuyScreen")}>
                     <FontAwesome5 name='shopping-cart' size={30} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
@@ -20,16 +20,12 @@ const Header = ({ drawer, back, cart, onPress }) => {
         )
     }
 
-    if (back && cart)
+    if (back)
         return (
             <View style={styles.wrapperHeader}>
                 <TouchableOpacity onPress={onPress}>
                     <FontAwesome5 name='arrow-right' size={30} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={onPress}>
-                    <FontAwesome5 name='shopping-cart' size={30} />
-                </TouchableOpacity>
-
             </View>
         )
 }

@@ -9,6 +9,8 @@ const mainColors = {
     darkGreen: '#275A02',
     StrongViolet: "#8200d6",
     grey_2: "#ccc",
+    blue: "rgba(24,170,230,0.8)",
+    red: "rgba(255, 0, 0 , 1)"
 }
 
 export const colors = {
@@ -22,4 +24,6 @@ export const colors = {
     darkGreen: mainColors.darkGreen,
     StrongViolet: mainColors.StrongViolet,
     grey_2: mainColors.grey_2,
+    blue: mainColors.blue,
+    red: mainColors.red
 };

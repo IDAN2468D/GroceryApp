@@ -9,6 +9,8 @@ import IL_RedOnion from '../images/il_redonion.png';
 import IL_Brokoli from '../images/il_brokoli.png';
 import AvatarMan from '../images/AvatarMan.png';
 import BgImage from '../images/BgImage.png';
+import G502_3W from '../images/G502-3W.png';
+import Logo from '../images/Authentication/main.jpg';
 
 export {
   IL_GetStarted_PNG,
@@ -21,5 +23,7 @@ export {
   IL_RedOnion,
   IL_Brokoli,
   AvatarMan,
-  BgImage
+  BgImage,
+  G502_3W,
+  Logo
 };
